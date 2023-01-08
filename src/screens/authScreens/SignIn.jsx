@@ -5,7 +5,7 @@ import {Icon, Button, SocialIcon} from 'react-native-elements';
 import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   const [passwordInput, setPasswordInput] = useState(false);
 
   const txtInput1 = useRef(1);
@@ -14,14 +14,16 @@ const SignIn = () => {
   return (
     <Fragment>
       <View style={styles.container}>
-        <Header title="My Account" type="arrow-left" />
+        <Header title="My Account" type="arrow-left" navigation={navigation} />
         <View style={{marginLeft: 20, marginTop: 10}}>
           <Text style={titleStyle}> Sign-In</Text>
         </View>
         <View style={{alignItems: 'center', marginTop: 10, marginLeft: 30}}>
           <Text style={styles.description}>
-            “If my mind can conceive it, If my heart can believe it, Then I can
-            achieve it”
+            “If my mind can conceive it, If my heart
+          </Text>
+          <Text style={styles.description}>
+            can believe it, Then I can achieve it”
           </Text>
         </View>
         <View style={{marginTop: 10}}>
@@ -74,6 +76,9 @@ const SignIn = () => {
             title="SIGN-IN"
             buttonStyle={parameters.styledButton}
             titleStyle={parameters.buttonTitle}
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
           />
         </View>
         <View style={{alignItems: 'flex-end', marginRight: 30, marginTop: 10}}>
@@ -122,9 +127,9 @@ const SignIn = () => {
           </Text>
         </View>
 
-        <View style={{alignItems: 'flex-end', marginRight: 20, marginTop: 20}}>
+        <View style={{alignItems: 'flex-end', marginRight: 30, marginTop: 20}}>
           <Button
-            title="Create An Account"
+            title="Create Account"
             buttonStyle={styles.createButton}
             titleStyle={styles.createButtonTitle}
           />

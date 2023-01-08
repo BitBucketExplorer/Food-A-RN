@@ -11,6 +11,7 @@ export const colors = {
   white: 'white',
   inputBorder: '#68939e',
   black: '#000',
+  appTheme: '#ff8c52',
 };
 
 export const parameters = {

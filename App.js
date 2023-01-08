@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import {colors} from './src/global/styles';
+import RootNavigator from './src/navigation/RootNavigator';
 import SignIn from './src/screens/authScreens/SignIn';
 const App = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={colors.statusbar} />
-      <SignIn />
+      <RootNavigator />
     </View>
   );
 };
