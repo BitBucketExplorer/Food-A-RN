@@ -31,3 +31,5 @@
 > npm install @react-navigation/drawer
 > npm install react-native-gesture-handler react-native-reanimated
 > npm install @react-navigation/stack
+
+- npm install react-native-countdown-component --save
