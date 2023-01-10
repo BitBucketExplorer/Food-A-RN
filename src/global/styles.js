@@ -8,10 +8,11 @@ export const colors = {
   CardComment: '#86939e',
   cardBackground: 'white',
   statusbar: '#ff8c52',
-  white: 'white',
+  white: '#fff',
   inputBorder: '#68939e',
   black: '#000',
   appTheme: '#ff8c52',
+  lightgreen: '#66DF48',
 };
 
 export const parameters = {
@@ -46,4 +47,10 @@ export const titleStyle = {
 export const socialIcon = {
   borderRadius: 12,
   height: 45,
+};
+export const headerText = {
+  fontSize: 22,
+  fontWeight: 'bold',
+  color: colors.grey2,
+  paddingVertical: 2,
 };
