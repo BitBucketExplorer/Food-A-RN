@@ -3,7 +3,8 @@ import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import SignInWelcome from '../screens/authScreens/SignInWelcome';
 import SignIn from '../screens/authScreens/SignIn';
 import Home from '../screens/Home';
-
+import RootClientTabs from './ClientTabs';
+import DrawerNavigatorTab from './DrawerNavigatorTab';
 const Auth = createStackNavigator();
 
 const AuthNavigator = () => {
@@ -27,8 +28,8 @@ const AuthNavigator = () => {
         }}
       />
       <Auth.Screen
-        name="Home"
-        component={Home}
+        name="DrawerNavigatorTab"
+        component={DrawerNavigatorTab}
         options={{
           headerShown: false,
           ...TransitionPresets.RevealFromBottomAndroid,

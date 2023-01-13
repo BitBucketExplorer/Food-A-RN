@@ -77,7 +77,7 @@ const SignIn = ({navigation}) => {
             buttonStyle={parameters.styledButton}
             titleStyle={parameters.buttonTitle}
             onPress={() => {
-              navigation.navigate('Home');
+              navigation.navigate('RootClientTabs');
             }}
           />
         </View>

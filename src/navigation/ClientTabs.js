@@ -2,25 +2,61 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icon} from 'react-native-elements';
 import {colors} from '../global/styles';
+import Home from '../screens/Home';
+import Search from '../screens/Search';
+import MyOrder from '../screens/MyOrder';
+import MyAccount from '../screens/MyAccount';
 
-const ClientTabs = createBottomTabNavigator();
-const ClientTabs = () => {
+const Tab = createBottomTabNavigator();
+const RootClientTabs = () => {
   return (
-    <ClientTabs.Navigator
-      tabBarOptions={{
-        activeTintColor: colors.appTheme,
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: colors.appTheme,
       }}>
-      <ClientTabs.Screen
-        name="HomeScreen"
+      <Tab.Screen
+        name="Home"
         component={Home}
         options={{
           tabBarLabel: 'Home',
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" type="material" color={colo} size={size} />
+            <Icon name="home" type="material" color={color} size={size} />
           ),
-        }}></ClientTabs.Screen>
-    </ClientTabs.Navigator>
+        }}></Tab.Screen>
+
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        options={{
+          tabBarLabel: 'Search',
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="search" type="material" color={color} size={size} />
+          ),
+        }}></Tab.Screen>
+      <Tab.Screen
+        name="MyOrder"
+        component={MyOrder}
+        options={{
+          tabBarLabel: 'Order',
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="view-list" type="material" color={color} size={size} />
+          ),
+        }}></Tab.Screen>
+      <Tab.Screen
+        name="MyAccount"
+        component={MyAccount}
+        options={{
+          tabBarLabel: 'Account',
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="person" type="material" color={color} size={size} />
+          ),
+        }}></Tab.Screen>
+    </Tab.Navigator>
   );
 };
 
-export default ClientTabs;
+export default RootClientTabs;

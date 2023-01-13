@@ -33,3 +33,4 @@
 - npm install @react-navigation/stack
 
 * npm install react-native-countdown-component --save
+* npx react-native start --reset-cache

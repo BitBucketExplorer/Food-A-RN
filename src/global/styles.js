@@ -13,6 +13,7 @@ export const colors = {
   black: '#000',
   appTheme: '#ff8c52',
   lightgreen: '#66DF48',
+  FOCUSSED: '#7cc',
 };
 
 export const parameters = {

@@ -1,7 +1,11 @@
 import React from 'react';
-
+import {View, Text} from 'react-native';
 const MyOrder = () => {
-  return <div>MyOrder</div>;
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>MyOrder</Text>
+    </View>
+  );
 };
 
 export default MyOrder;

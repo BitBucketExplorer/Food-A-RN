@@ -18,11 +18,11 @@ import FoodCard from '../components/FoodCard';
 import {colors, headerText} from '../global/styles';
 import {filterData, foodCardData} from '../global/Data';
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const Home = () => {
+const Home = ({navigation}) => {
   const [delivery, setDelivery] = useState(true);
   return (
     <View style={styles.container}>
-      <HomeHeader />
+      <HomeHeader navigation={navigation} />
       <ScrollView
         stickyHeaderIndices={[0]}
         showsHorizontalScrollIndicator={true}>
@@ -48,6 +48,7 @@ const Home = () => {
             <TouchableOpacity
               onPress={() => {
                 setDelivery(false);
+                navigation.navigate('RestaurantsMap');
               }}>
               <View
                 style={{
@@ -182,6 +183,24 @@ const Home = () => {
           ))}
         </View>
       </ScrollView>
+      <View>
+        {delivery && (
+          <View style={styles.mapButton}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('RestaurantsMap');
+              }}>
+              <Icon
+                name="place"
+                type="material"
+                size={32}
+                color={colors.appTheme}
+              />
+              <Text style={{color: colors.grey2}}>Map</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </View>
     </View>
   );
 };
@@ -202,6 +221,17 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     fontSize: 16,
     fontWeight: '700',
+  },
+  mapButton: {
+    position: 'absolute',
+    bottom: 10,
+    right: 15,
+    backgroundColor: colors.white,
+    elevation: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: 'center',
   },
 });
 export default Home;
